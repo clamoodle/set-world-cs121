@@ -1,0 +1,326 @@
+/*
+  NAME: Pearl Chen
+  CS 132 Spring 2023
+  DATE: May 9, 2023
+
+  Style page for index.html applicable to all views, also has common animation elements
+*/
+
+/* Silkscreen, Designed by Jason Kottke, Regular400 & Bold700 */
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
+/* Foldit, Light 300 */
+@import url("https://fonts.googleapis.com/css2?family=Foldit:wght@300&display=swap");
+/* Press Start 2P, Regular 400 */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+body {
+  padding: 0;
+  overflow: hidden;
+  background-size: 300svw 100svh;
+}
+
+body,
+.bg.sliding-layer,
+main > section:not(.popup) {
+  height: 100lvh;
+}
+
+main > section:not(.popup) {
+  width: 100lvw;
+}
+
+body,
+h1,
+h3 {
+  margin: 0;
+}
+
+* {
+  font-family: "Silkscreen", "Courier New", Courier, monospace;
+  font-weight: 400;
+  text-align: center;
+
+  /* No selection highlight */
+  /* Source: https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+
+  /* for crisp pixel art upon resize */
+  /* Source: https://css-tricks.com/almanac/properties/i/image-rendering/ */
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+header,
+main > section,
+.bg.sliding-layer,
+img.close-button {
+  position: absolute;
+}
+
+main,
+header,
+div,
+section:not(#chat-content),
+form,
+.popup,
+form label,
+.user-info,
+#users-list,
+#uesrs-icons {
+  display: flex;
+}
+
+input[type="range"] {
+  width: 150%;
+}
+
+li {
+  text-align: left;
+}
+
+main,
+#add-friends-page > section,
+#music-toggle,
+#chats-list,
+#chat {
+  height: 100%;
+}
+
+#chat > * {
+  margin-left: 20px;
+}
+
+#add-friends-page {
+  justify-content: space-evenly;
+  height: 80%;
+  margin: 50px;
+}
+
+.user-info > img,
+#chats-list {
+  width: 30%;
+}
+
+.user-info > img,
+#chats-list img {
+  margin-right: 10%;
+}
+
+main,
+div,
+section,
+form,
+#login-window,
+.popup {
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  top: 15px;
+  left: 10px;
+  height: 40px;
+  align-items: stretch;
+}
+
+header *,
+.filter-item,
+#typebox > input,
+#chat-content p {
+  margin-left: 10px;
+}
+
+h1,
+h3 {
+  text-transform: uppercase;
+  font-family: "Foldit", sans-serif;
+}
+
+h1 {
+  font-size: 35svh;
+  letter-spacing: 2rem;
+}
+
+button,
+#music-toggle,
+.close-button,
+#chats-list > div,
+#user-icons article,
+.trait-select > img {
+  cursor: pointer;
+}
+
+#music-toggle {
+  width: 47.26px;
+  background-image: url(../media/buttons/music-on-button.png);
+  background-size: 47.26px;
+  background-repeat: no-repeat;
+}
+
+#music-toggle.muted {
+  background-image: url(../media/buttons/music-off-button.png);
+}
+
+button {
+  border: none;
+  padding: 7px 10px;
+  margin: 20px;
+}
+
+img.close-button {
+  margin: 28px;
+  width: 28px;
+}
+
+main > section,
+#login-window > form,
+form label,
+.user-info > div,
+#users-list,
+#chat,
+#chats-list,
+#messenger,
+#chat-content {
+  flex-direction: column;
+}
+
+#chats-list,
+.friend-msg {
+  justify-content: flex-start;
+}
+
+#chat-content div,
+#add-friends-page > section,
+.user-info button,
+#menu button,
+input[type="range"],
+#users-list article > img,
+#user-icons,
+#chat-content,
+#typebox {
+  width: 100%;
+}
+
+#chat-content p,
+.filter-item,
+#typebox > input {
+  padding: 5px;
+}
+
+#chat-content p {
+  margin-right: 10px;
+  width: fit-content;
+  border-radius: 7px;
+}
+
+.user-msg {
+  justify-content: flex-end;
+}
+
+#chat,
+#chat-content,
+#messenger > section,
+#typebox > input,
+#user-icons {
+  flex-grow: 1;
+}
+
+#chats-list img {
+  width: 20%;
+}
+
+.user-info,
+#user-icons {
+  flex-direction: row;
+}
+
+.user-info button,
+#menu button,
+input[type="range"] {
+  margin: 8px;
+}
+
+.filter-item,
+#typebox > input {
+  border-radius: 0%;
+}
+
+#user-icons,
+#chat-content {
+  overflow-y: scroll;
+}
+
+#user-icons,
+#search-filters {
+  flex-wrap: wrap;
+}
+
+#users-list article {
+  width: 200px;
+  margin: 10px;
+}
+
+main > section,
+.bg.sliding-layer,
+img.close-button {
+  top: 0;
+}
+
+.bg.sliding-layer,
+img.close-button {
+  left: 0;
+}
+
+.popup {
+  max-width: 60%;
+  border-radius: 10px;
+  padding: 3svh 10lvw 3svh;
+}
+
+#login-window > form {
+  padding-top: 5svh;
+}
+
+form label {
+  margin-bottom: 15px;
+}
+
+/* Leaderboard styling */
+#leaderboard > table {
+  width: 450px;
+}
+small {
+  text-align: right;
+}
+
+/* animation made for images 3x screen width to loop */
+.sliding-layer {
+  animation: slide linear;
+}
+
+.bg.sliding-layer {
+  background-repeat: repeat-x;
+  width: 600svw;
+  background-size: 300svw;
+  background-position: 0% 100%;
+  animation-iteration-count: infinite;
+}
+
+/* small faraway background mountains */
+.bg.sliding-layer:first-child {
+  background-position: 55% 100%; /* starting on my fav part of the drawing */
+  background-size: 310svw;
+  animation-duration: 200s;
+}
+
+.hidden {
+  /* the only important!!! to override id's and all other selectors' display values */
+  display: none !important;
+}
